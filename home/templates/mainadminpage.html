@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
     
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
 
@@ -16,7 +16,7 @@
         color:white;
       }
       body{
-          background: url("/static/wallpaper.jpg");
+          background: url("/static/wallpaper.jpg")no-repeat;
           background-size: cover;
       }
        
@@ -34,6 +34,7 @@
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
                 </button>
+                <span class="navd"><img src="/static/cbitlogo.png" width="40" alt=""></span>
                 <a class="navbar-brand" href="#">ADMIN</a>
               </div>
           
@@ -53,14 +54,27 @@
     </header>
     
     </ul>
+    <ul class="nav flex-column">
+      <li class="nav-item">
+        <a class="nav-link active" href="{%url 'pending_requests'%}" style="color:black;text-align:center;"><h1>Pending Requests</h1></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{%url 'show_clubs'%}"  style="color:black;text-align:center;"><h1>Clubs</h1></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="{%url 'getevents'%}" style="color:black;text-align:center;"><h1>Events</h1></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{%url 'getusers'%}"  style="color:black;text-align:center;"><h1>Users</h1></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{%url 'getstudentsregistered'%}"  style="color:black;text-align:center;"><h1>Students Registered</h1></a>
+      </li>
+
+    </ul>
   
     
-    <a  style="text-align:left;" href="{%url 'pending_requests'%}"><h2 style="color:white">Pending requests</h2></a>
-    <a  style="text-align:left;" href="{%url 'show_clubs'%}"><h2 style="color:white">Clubs</h2></a>
-    <a  style="text-align:left;" href="{%url 'getevents'%}"><h2 style="color:white">Events</h2></a>
-    <a  style="text-align:left;" href="{%url 'getusers'%}"><h2 style="color:white">Users</h2></a>
-    <a  style="text-align:left;" href="{%url 'getstudentsregistered'%}"><h2 style="color:white">Students Registered</h2></a>
-  
+
     
 
 </body>

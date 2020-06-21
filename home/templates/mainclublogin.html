@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
     
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
 
@@ -12,7 +12,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
     <style>
       body{
-          background: url("/static/wallpaper.jpg");
+          background: url("/static/wallpaper.jpg")no-repeat;
           background-size: cover;
       }
 
@@ -61,6 +61,7 @@
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
                 </button>
+                <span class="navd"><img src="/static/cbitlogo.png" width="40" alt=""></span>
                 <a class="navbar-brand" href="#">CLUB</a>
               </div>
           
@@ -80,9 +81,15 @@
             </div><!-- /.container-fluid -->
           </nav>
     </header>
-    
-  <a  style="text-align:left;" href="{%url 'show_events'%}"><h2 style="color:white">my events</h2></a>
-    <a  style="text-align:left;" href="{%url 'create_event'%}"><h2 style="color:white">Create an event</h2></a>
+    <ul class="nav flex-column">
+      <li class="nav-item">
+        <a class="nav-link active" href="{%url 'show_events'%}" style="color:black;text-align:center;"><h1>My Events</h1></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{%url 'create_event'%}" style="color:black;text-align:center;"><h1>Create an event</h1></a>
+      </li>
+      
+    </ul>
 
     
 

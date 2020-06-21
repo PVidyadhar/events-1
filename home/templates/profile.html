@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
     
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
 
@@ -11,16 +11,14 @@
 
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
     <style>
-      body{
-         
-          background-size: cover;
-      }
+     
+      .jumbotron{
+          position: relative;
+          background: none;
 
-      .main {
-          margin-left:250px; 
-          padding: 0px 10px;
-          margin-top: 60px;
       }
+      
+      
       .sidenav {
          height:100%; /* Full-height: remove this if you want "auto" height */
          width: 160px; /* Set the width of the sidebar */
@@ -44,6 +42,12 @@
       .sidenav a:hover {
         color: #2196F3;
       }
+      body{
+          background-image: url("/static/added8.jpg") ;
+          background-repeat: no-repeat;
+          background-size:cover;
+          
+      }
 
        
     
@@ -61,6 +65,7 @@
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
                 </button>
+                <span class="navd"><img src="/static/cbitlogo.png" width="40" alt=""></span>
                 <a class="navbar-brand" href="#">CLUB</a>
               </div>
           
@@ -80,15 +85,21 @@
             </div><!-- /.container-fluid -->
           </nav>
     </header>
-<form method="POST" action="{%url 'changeform'%}">
-{% csrf_token %}
- <h3>Club Name : </h3> {{data.0.clubname}}
- <h3>Club Head : </h3> {{data.0.clubhead}}
- <h3>Phone No : </h3>{{data.0.phoneno}}
- <h3>Email Id : </h3> {{data.0.emailid}}
- <br/>
- <button type=submit>Change Password</button>
-</form>   
+    <div class='container'>
+      <div class="jumbotron">
+        <form method="POST" action="{%url 'changeform'%}">
+        {% csrf_token %}
+          <h3 style="color:black;">Club Name : {{data.0.clubname}}</h3>
+          <h3 style="color:black;">Club Head :  {{data.0.clubhead}}</h3>
+          <h3 style="color:black;">Phone No : {{data.0.phoneno}}</h3>
+          <h3 style="color:black;">Email Id : {{data.0.emailid}}</h3>
+          <br/>
+          <div class="center">
+          <button type=submit style="width:20%;background-color:green;color: white;text-align:center;margin-left: 150px;">Change Password</button>
+          </div>
+        </form> 
+      </div>
+    </div>  
 
 </body>
 </html>
