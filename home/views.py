@@ -47,7 +47,8 @@ def mainadmin(request):
     if "access_token" in admintoken:
         admintoken = admintoken['access_token']
         print(admintoken)
-        return render(request,'mainadminpage.html')
+        context=getpendingclubs()
+        return render(request,'pending1.html',context)
     else:
         return HttpResponse(admintoken["message"])
 def show_clubs(request):
@@ -55,7 +56,8 @@ def show_clubs(request):
     return render(request,'show_clubs.html',context)
 
 def adminhome(request):
-    return render(request,'mainadminpage.html')
+    context=getpendingclubs()
+    return render(request,'pending1.html',context)
 def getevents():
     global admintoken
     data = requests.get("https://cbitevents.herokuapp.com/getevents",headers = {'Authorization':'Bearer {}'.format(admintoken)})
@@ -87,7 +89,7 @@ def getstudentsregistered(request):
 def pending_requests(request):
 
     context=getpendingclubs()
-    return render(request,'pending.html',context)
+    return render(request,'pending1.html',context)
     #return render(request,'mainadminpage.html')
 def acceptdeny(request):
     global admintoken
@@ -166,13 +168,16 @@ def after_clublogin(request):
             clubtoken = clubtoken['access_token']
         
             print(clubtoken)
-            return render(request,'mainclublogin.html')
+            
+            context=show(clubname)
+            return render(request,'show_events1.html',context)
     elif "pendingmessage"in clubtoken:
         return render(request,'thanks.html')
     else:
         return HttpResponse(clubtoken["message"])
 def clubhome(request):
-    return render(request,'mainclublogin.html')
+    
+    return render(request,'show_events1.html')
 def show(clubname):
     data = requests.get("https://cbitevents.herokuapp.com/geteventdetails",headers = {'Authorization':'Bearer {}'.format(clubtoken)},data={'clubname':clubname})
     data = data.json()
@@ -183,7 +188,7 @@ def show(clubname):
 def show_events(request):
     global clubname
     context=show(clubname)
-    return render(request,'show_events.html',context)
+    return render(request,'show_events1.html',context)
 def create_event(request):
     return render(request,'create_event.html')
 def after_createevent(request):

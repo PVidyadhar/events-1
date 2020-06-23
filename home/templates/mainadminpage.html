@@ -1,60 +1,40 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
-    
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
-
-
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
-
-
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>  
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/global.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     <style>
       .parameters{
         text-align: left;
         color:white;
       }
       body{
-          background: url("/static/wallpaper.jpg")no-repeat;
+          
           background-size: cover;
       }
        
     </style>
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-default navbar-inverse">
-            <div class="container">
-              
-              <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                  <span class="sr-only">Toggle navigation</span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                </button>
-                <span class="navd"><img src="/static/cbitlogo.png" width="40" alt=""></span>
-                <a class="navbar-brand" href="#">ADMIN</a>
-              </div>
-          
-              <!-- Collect the nav links, forms, and other content for toggling -->
-              <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                
-                
-                <ul class="nav navbar-nav navbar-right">
-                  <li><a href="{%url 'adminmain' %}">Home</a></li>
-                  <li><a href='#'>Notifications</a></li>
-                  <li><a href="{%url 'home'%}">LogOUT</a></li>
-                 
-                </ul>
-              </div><!-- /.navbar-collapse -->
-            </div><!-- /.container-fluid -->
-          </nav>
-    </header>
-    
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <span class="navbar-brand mb=0 h1"><img src="/static/cbitlogo.png" width="40" alt="">  </span>
+    <h3 style="color: white;">Admin</h3>
+    <ul class="navbar-nav ml-auto">
+        <li class="nav-item"><a href="{%url 'adminhome'%}" class="nav-link" style="color: white;">Home</a></li>
+        <li class="nav-item"><a href="#" class="nav-link" style="color: white;">Notifications</a></li>
+        <li class="nav-item"><a href="{%url 'home'%}" class="nav-link" style="color: white;">Logout</a></li>
+
     </ul>
-    <ul class="nav flex-column">
+  </nav>
+    
+    
+  <ul class="nav flex-column">
       <li class="nav-item">
         <a class="nav-link active" href="{%url 'pending_requests'%}" style="color:black;text-align:center;"><h1>Pending Requests</h1></a>
       </li>
@@ -71,11 +51,6 @@
         <a class="nav-link" href="{%url 'getstudentsregistered'%}"  style="color:black;text-align:center;"><h1>Students Registered</h1></a>
       </li>
 
-    </ul>
-  
-    
-
-    
-
+  </ul>
 </body>
 </html>
