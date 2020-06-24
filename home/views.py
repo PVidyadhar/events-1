@@ -298,5 +298,7 @@ def changepassword(request):
             return HttpResponse("Old Passwords didnt match")
     else:
         return HttpResponse("New Passwords didnt match")
+def getstarted(request):
+    return render(request,'letsgetstarted.html')
 
 

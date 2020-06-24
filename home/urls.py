@@ -27,5 +27,6 @@ urlpatterns=[
     path('enterclubnamereset/',views.enterclubnamereset,name='enterclubnamereset'),
     path('profile/',views.profile,name="profile"),
     path('changeform/',views.changeform,name="changeform"),
-    path('changepassword/',views.changepassword,name="changepassword")
+    path('changepassword/',views.changepassword,name="changepassword"),
+    path('getstarted/',views.getstarted,name='getstarted'),
 ]
