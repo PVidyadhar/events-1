@@ -75,8 +75,8 @@
     
   <div class="container-fluid text-center">    
     <div class="row content">
-      <div class="col-sm-6 sidenav">
-        <form method="POST" action="{%url 'changeform'%}">
+      <div class="col-sm-4">
+        <form method="POST" action="{%url 'changeform'%}" align="left">
         {% csrf_token %}
           <br><br><br><br>
           <h3 style="color:black;">Club Name : {{data.0.clubname}}</h3>
@@ -89,7 +89,7 @@
           </div>
         </form> 
       </div>
-      <div class="col-sm-5 ">
+      <div class="col-sm-8 ">
         <br><br><br><br>  
         <img src="/static/cbitlogo.png" width="400" height="400">
       </div>

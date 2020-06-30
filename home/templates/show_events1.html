@@ -39,7 +39,7 @@
 <body>
   <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
     <span class="navbar-brand mb=0 h1"><img src="/static/cbitlogo.png" width="40" alt=""></span>
-    <h3 style="color: white;">Club</h3>
+    <h3 style="color: white;">{{data.0.clubname}}</h3>
     <ul class="navbar-nav ml-auto">
       <li class="nav-item"><a href="{%url 'show_events'%}" class="nav-link" style="color: white;">Home</a></li>
        <li class="nav-item"><a href="{%url 'profile'%}" class="nav-link" style="color: white;">My profile</a></li>
@@ -62,9 +62,16 @@
       <thead>
         <tr>
           <th scope="col">#</th>
-          {% for key in data.0.keys %}
-          <th scope="col">{{ key }}</th>
-          {% endfor %}
+     
+          <th scope="col">Event Name</th>
+          <th scope="col">Event Description</th>
+          <th scope="col">Event Incharge</th>
+          <th scope="col">Contact No.</th>
+          <th scope="col">Last Date of Registration</th>
+          <th scope="col">Event Start Date</th>
+          <th scope="col">Event End Date</th>
+          <th scope="col">Action</th>
+    
         </tr>
       </thead>
       <tbody>
@@ -73,12 +80,13 @@
         {% csrf_token %} 
         <tr>
          <th scope="row">{{forloop.counter}}</th>
-         {% for value in dict_item.values %}
-
-         
-         <td> {{ value }} </td>
-
-         {% endfor %}
+         <td> {{ dict_item.eventname }} </td>
+         <td> {{ dict_item.eventdesc }} </td>
+         <td> {{ dict_item.eventincharge }} </td>
+         <td> {{ dict_item.contactno }} </td>
+         <td> {{ dict_item.lastregdate }} </td>
+         <td> {{ dict_item.startdate }} </td>
+         <td> {{ dict_item.enddate }} </td>
          <td>
           
          <button type="submit" class="btn btn-danger" name="status" value=0>Delete</button>

@@ -32,6 +32,7 @@
           background-size: cover;
     }
   </style>
+ 
 </head>  
 <body>
   <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
@@ -47,7 +48,7 @@
 <section class="container-fluid bg">
     <section class="row justify-content-center">
         <section class="col-12 col-sm-6 col-md-3">
-            <form class="form-container" id="myform" action="{%url 'after_reg' %}" method="POST">
+            <form class="form-container" id="myform" action="{%url 'after_reg' %}" method="POST" >
                 {%csrf_token%}
                 <div class="form-group">
                   <h1>{{data}}</h1>
@@ -66,11 +67,11 @@
                 </div>
                 <div class="form-group">
                     <label for="phoneno">Phone no</label>
-                    <input type="text" class="form-control" id="exampleInputPassword1" name="phoneno"  required='true'>
+                    <input type="text" class="form-control" id="phoneno" name="phoneno"  required='true'>
                 </div>
                 <div class="form-group">
                     <label for="emailid">Email Id</label>
-                    <input type="text" class="form-control" id="exampleInputPassword1" name="emailid"  required='true'>
+                    <input type="text" class="form-control" id="emailid" name="emailid"  required='true'>
                 </div>
                 
                 <button type="submit" class="btn btn-primary btn-block">Signup</button>

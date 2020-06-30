@@ -43,7 +43,7 @@
     <h3 style="color: white;">Admin</h3>
     <ul class="navbar-nav ml-auto">
       <li class="nav-item"><a href="{%url 'adminhome'%}" class="nav-link" style="color: white;">Home</a></li>
-      <li class="nav-item"><a href="#" class="nav-link" style="color: white;">Notifications</a></li>
+
       <li class="nav-item"><a href="{%url 'home'%}" class="nav-link" style="color: white;">Logout</a></li>
     </ul>
   </nav>
@@ -67,9 +67,17 @@
       <thead>
         <tr>
           <th scope="col">#</th>
-          {% for key in data.0.keys %}
-          <th scope="col">{{ key }}</th>
-          {% endfor %}
+   
+          <th scope="col">Event Name</th>
+          <th scope="col">Club Name</th>
+          <th scope="col">Event Description</th>
+          <th scope="col">Event Incharge</th>
+          <th scope="col">Contact No.</th>
+          <th scope="col">Last Date of Registration</th>
+          <th scope="col">Event Start Date</th>
+          <th scope="col">Event End Date</th>
+          <th scope="col">Action</th>
+     
         </tr>
       </thead>
       <tbody>
@@ -78,14 +86,16 @@
         {% csrf_token %} 
         <tr>
          <th scope="row">{{forloop.counter}}</th>
-         {% for value in dict_item.values %}
-         
-         
-
-         <td> {{ value }} </td>
+        
+         <td> {{ dict_item.eventname }} </td>
+         <td> {{ dict_item.clubname }} </td>
+         <td> {{ dict_item.eventdesc }} </td>
+         <td> {{ dict_item.eventincharge }} </td>
+         <td> {{ dict_item.contactno }} </td>
+         <td> {{ dict_item.lastregdate }} </td>
+         <td> {{ dict_item.startdate }} </td>
+         <td> {{ dict_item.enddate }} </td>
     
-         
-          {% endfor %}
           <td>
             <button type="submit" class="btn btn-danger" name="status" value=2>Delete</button>
             <input type="hidden" name="eventname" value= "{{dict_item.eventname}}" >

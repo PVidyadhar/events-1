@@ -34,6 +34,7 @@
        p{
            text-align: center;
        }
+  
     </style>
 </head>
 <body>
@@ -42,13 +43,13 @@
     <h3 style="color: white;">Admin</h3>
     <ul class="navbar-nav ml-auto">
       <li class="nav-item"><a href="{%url 'adminhome'%}" class="nav-link" style="color: white;">Home</a></li>
-      <li class="nav-item"><a href="#" class="nav-link" style="color: white;">Notifications</a></li>
+    
       <li class="nav-item"><a href="{%url 'home'%}" class="nav-link" style="color: white;">Logout</a></li>
     </ul>
   </nav>
 <div class="container-fluid text-center">
   <div class="row content">
-    <div class="col-sm-2 sidenav">
+    <div class="col-sm-2 sidenav ">
       <img src="/static/logo.png">
       <p><a href="{%url 'pending_requests'%}"><h4>Pending Requests</h4></a></p>
       <p><a href="{%url 'show_clubs'%}"><h4>Clubs</h4></a></p>
@@ -63,9 +64,13 @@
            <thead>
              <tr>
                <th scope="col">#</th>
-               {% for key in data.0.keys %}
-               <th scope="col">{{ key }}</th>
-               {% endfor %}
+             
+               <th scope="col">Club Name</th>
+               <th scope="col">Club Head</th>
+               <th scope="col">Email ID</th>
+               <th scope="col">Phone No.</th>
+               <th scope="col">Action</th>
+              
              </tr>
            </thead>
            <tbody>
@@ -74,19 +79,18 @@
              {% csrf_token %} 
              <tr>
               <th scope="row">{{forloop.counter}}</th>
-              {% for value in dict_item.values %}
-              {% if value == 0 or value == 1  %}
+              <td> {{ dict_item.clubname }} </td>
+              <td> {{ dict_item.clubhead }} </td>
+              <td> {{ dict_item.emailid }} </td>
+              <td> {{ dict_item.phoneno }} </td>
+
               <td>
                 <button type="submit" class="btn btn-success" name="status" value=1>Accept</button>
               <button type="submit" class="btn btn-danger" name="status" value=0>Deny</button>
               <input type="hidden" name="clubname" value= "{{dict_item.clubname}}" >
              </td>
               
-              {% else %}
-              <td> {{ value }} </td>
-              {% endif %}
-              
-               {% endfor %}
+         
              </tr>
            </form> 
              {% endfor %}

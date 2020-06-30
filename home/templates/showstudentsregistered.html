@@ -43,7 +43,7 @@
     <h3 style="color: white;">Admin</h3>
     <ul class="navbar-nav ml-auto">
       <li class="nav-item"><a href="{%url 'adminhome'%}" class="nav-link" style="color: white;">Home</a></li>
-      <li class="nav-item"><a href="#" class="nav-link" style="color: white;">Notifications</a></li>
+    
       <li class="nav-item"><a href="{%url 'home'%}" class="nav-link" style="color: white;">Logout</a></li>
     </ul>
   </nav>
@@ -67,9 +67,14 @@
       <thead>
         <tr>
           <th scope="col">#</th>
-          {% for key in data.0.keys %}
-          <th scope="col">{{ key }}</th>
-          {% endfor %}
+          <th scope="col">Roll No</th>
+          <th scope="col">Name</th>
+          <th scope="col">Event Name</th>
+          <th scope="col">Year</th>
+          <th scope="col">Branch</th>
+          <th scope="col">Section</th>
+          <th scope="col">Email ID</th>
+          <th scope="col">Phone No.</th>
         </tr>
       </thead>
       <tbody>
@@ -77,11 +82,17 @@
       
         <tr>
          <th scope="row">{{forloop.counter}}</th>
-         {% for value in dict_item.values %}
-
-         <td> {{ value }} </td>
          
-          {% endfor %}
+
+         <td> {{ dict_item.rollno }} </td>
+         <td> {{ dict_item.name }} </td>
+         <td> {{ dict_item.eventname }} </td>
+         <td> {{ dict_item.year }} </td>
+         <td> {{ dict_item.branch }} </td>
+         <td> {{ dict_item.section }} </td>
+         <td> {{ dict_item.emailid }} </td>
+         <td> {{ dict_item.contactno }} </td>
+      
         </tr>
       </form> 
         {% endfor %}

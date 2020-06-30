@@ -113,7 +113,7 @@ def acceptdeny(request):
         
         if value == '0' or value == '1':
             context=getpendingclubs()
-            return render(request,'pending.html',context)
+            return render(request,'pending1.html',context)
         if value == '2':
             context=getacceptedclubs()
             return render(request,'show_clubs.html',context)
